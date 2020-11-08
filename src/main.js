@@ -16,6 +16,10 @@ const vueLifeCycle = singleSpaVue({
 if(window.singleSpaNavigate){
   __webpack_public_path__ = 'http://localhost:10001/' //__webpack_public_path__是webpack自带的，此时就变成了绝对路径
 }
+else{
+  delete appOptions.el
+  new Vue(appOptions).$mount('#app')
+}
 //协议加入,定好了协议父应用会调用这些方法
 export const bootstrap = vueLifeCycle.bootstrap
 export const mount = vueLifeCycle.mount

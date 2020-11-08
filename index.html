@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p{
+            background: red;
+        }
+    </style>
+    <title>shadowDom</title>
+</head>
+<body>
+    <div class="container">
+        <p>hellow world</p>
+        <div id="shadow">
+        </div>
+    </div>
+    <script>
+            //attachSha
+           let shadowDom = shadow.attachShadow({mode:'closed'}) //外界无法访问 ，close
+           let pElM = document.createElement('p')
+           pElM.innerHTML = "你好世界"
+           shadowDom.appendChild(pElM)
+    </script>
+</body>
+</html>
